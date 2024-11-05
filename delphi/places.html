@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Places in Athens - Greek Tourism</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'times new roman', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1920/600');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden; 
+        }
+        .header-img{
+        width: 100vw;
+        height: 80vh;
+        object-fit: fill; 
+        filter: brightness(50%); 
+        }
+        .hero-content {
+        position: absolute;
+        color: white; 
+        display: flex;flex-direction: column;
+        gap:1rem;
+        text-align: center;
+        top: 50%; 
+        transform: translateY(-50%);
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem; 
+            margin-bottom: 0.5rem; 
+        }
+
+        .hero-content p {
+            font-size: 1.25rem; 
+        }
+        .back-home {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(0,0,0,0.5);
+            border-radius: 5px;
+        }
+
+        nav {
+            background-color: #7091e6;
+            padding: 1.2rem;
+            position: sticky;
+            top:0;
+            z-index: 10;
+        }
+        .title{
+            align-self: flex-start;
+            font-size: x-large;
+        }
+        .middle{
+            display: flex;
+            gap:0.5rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3d52a0;
+        }
+
+        .explore-btn {
+            width: 10vw;
+            padding: 1rem;
+            background-color: #adbbda;
+            color: black;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: transform 0.3s;
+        }
+
+        .explore-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .attractions-section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .attraction-card {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .attraction-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .attraction-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .attraction-info {
+            padding: 2rem;
+        }
+
+        .attraction-info h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .attraction-info p {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .quick-facts {
+            background-color: var(--light-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .quick-facts h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-facts ul {
+            list-style: none;
+        }
+
+        .quick-facts li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: #7091e6;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <div>
+                <li><a href="../index.html" class="title">Greecious</a></li>
+            </div>
+            <div class="middle">
+                <li><a href="history.html">History</a></li>
+                <li><a href="festivals.html">Cultural Festivals</a></li>
+                <li><a href="places.html">Places to Visit</a></li>
+                <li><a href="food.html">Food & Drink</a></li>
+                <li><a href="guide.html">Travel Guide</a></li>
+            </div>
+            <div>
+
+            </div>
+        </ul>
+    </nav>
+    
+    <header>
+        <img src="https://cdn.britannica.com/62/4662-050-84AF686F/tholos-Marmaria-Greece-Delphi.jpg" alt="image" class="header-img">
+
+        <div class="hero-content">
+            <h1>Explore the Ancient Oracle’s Sanctuary, Where Myth Meets Majesty</h1>
+            <p>Journey through time in the cradle of Western civilization</p>
+            <div>
+                <a href="#attractions" class="explore-btn">Start Exploring</a>
+            </div>
+        </div>
+    </header>
+
+   <section id="attractions" class="attractions-section">
+    <h2 class="section-title">Must-Visit Attractions</h2>
+
+    <div class="attraction-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRU7CV31tgB8jKaehQyZCHCzYzM5cv81bZmmQ&s" alt="The Oracle of Delphi" class="attraction-img">
+        <div class="attraction-info">
+            <h3>The Oracle of Delphi</h3>
+            <p>The most famous oracle of the ancient world, where Pythia, the high priestess, delivered prophecies. This sacred site, dedicated to Apollo, was central to ancient Greek religion and politics.</p>
+            <div class="quick-facts">
+                <h4>Quick Facts</h4>
+                <ul>
+                    <li>🕒 Opening Hours: 8:00 AM - 8:00 PM (summer), 8:00 AM - 5:00 PM (winter)</li>
+                    <li>💶 Entry Fee: €12</li>
+                    <li>⏱️ Suggested Visit: 2-3 hours</li>
+                    <li>📍 Location: Archaeological Site of Delphi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="attraction-card">
+        <div class="attraction-info">
+            <h3>Temple of Apollo</h3>
+            <p>One of the most significant temples in ancient Greece, dedicated to Apollo, god of prophecy, music, and healing. The temple was home to the Oracle and was visited by seekers from across the Greek world.</p>
+            <div class="quick-facts">
+                <h4>Quick Facts</h4>
+                <ul>
+                    <li>🕒 Opening Hours: 8:00 AM - 8:00 PM (summer), 8:00 AM - 5:00 PM (winter)</li>
+                    <li>💶 Entry Fee: Included in the Delphi site ticket</li>
+                    <li>⏱️ Suggested Visit: 1-2 hours</li>
+                    <li>📍 Location: Within the Delphi Archaeological Site</li>
+                </ul>
+            </div>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH5J9zK2HxNFrwapRbMgVhvsw4s2spGTVRdw&s" alt="Temple of Apollo" class="attraction-img">
+    </div>
+
+    <div class="attraction-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR341HOoT0IQg8oHlGuoBdcDB375UE-rUhiCA&s" alt="Ancient Theater of Delphi" class="attraction-img">
+        <div class="attraction-info">
+            <h3>Ancient Theater of Delphi</h3>
+            <p>This theater, built on a hillside, offers breathtaking views of the valley below. It hosted musical competitions, poetry recitals, and plays during the Pythian Games in honor of Apollo.</p>
+            <div class="quick-facts">
+                <h4>Quick Facts</h4>
+                <ul>
+                    <li>🏛️ Capacity: Approximately 5,000 spectators</li>
+                    <li>🎭 Highlights: Performances and ancient drama festivals</li>
+                    <li>⏱️ Suggested Visit: 1 hour</li>
+                    <li>📍 Location: Near the Temple of Apollo</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="attraction-card">
+        <div class="attraction-info">
+            <h3>Tholos of Delphi</h3>
+            <p>The Tholos is a circular building at the sanctuary of Athena Pronaia, known for its unique architecture and mystery. It remains an iconic structure within Delphi.</p>
+            <div class="quick-facts">
+                <h4>Quick Facts</h4>
+                <ul>
+                    <li>🕒 Opening Hours: 8:00 AM - 8:00 PM (summer), 8:00 AM - 5:00 PM (winter)</li>
+                    <li>💶 Entry Fee: Free (part of the lower sanctuary)</li>
+                    <li>⏱️ Suggested Visit: 30 minutes</li>
+                    <li>📍 Location: Sanctuary of Athena Pronaia</li>
+                </ul>
+            </div>
+        </div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk6ymxgXFzR-c3BZl0VsCGBR4ntYEjrsjKtQ&s" alt="Tholos of Delphi" class="attraction-img">
+    </div>
+
+    <div class="attraction-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCq72qAb8iqeSq5qKSPpKQqWo4ddiYaAzwbg&s" alt="Delphi Archaeological Museum" class="attraction-img">
+        <div class="attraction-info">
+            <h3>Delphi Archaeological Museum</h3>
+            <p>This museum houses artifacts from the Delphi site, including the famous Charioteer statue and other relics that reveal the history and grandeur of ancient Delphi.</p>
+            <div class="quick-facts">
+                <h4>Quick Facts</h4>
+                <ul>
+                    <li>🕒 Opening Hours: 9:00 AM - 4:00 PM</li>
+                    <li>💶 Entry Fee: €6</li>
+                    <li>⏱️ Suggested Visit: 1-2 hours</li>
+                    <li>📍 Location: Next to the Delphi Archaeological Site</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <footer>
+        <p>© 2024 Greek Tourism Guide | Athens Attractions</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for animation
+        const cards = document.querySelectorAll('.attraction-card');
+        const observer = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            },
+            { threshold: 0.1 }
+        );
+
+        // Apply initial styles and observe each card
+        cards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
