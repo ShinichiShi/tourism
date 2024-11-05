@@ -101,12 +101,14 @@
         }
         .modal-content {
             background-color: white;
-            margin: 10% auto;
+            margin: 0% auto;
             padding: 2rem;
-            width: 80%;
-            max-width: 800px;
+            width: 50%;
+            max-width: 500px;
             border-radius: 10px;
             position: relative;
+            bottom: -15%;
+            /* top: px; */
         }
         .close-modal {
             position: absolute;
@@ -173,7 +175,7 @@
 <body>
     <div>
     <header class="navbar">
-        <a href="index.html" class="logo">Greecious</a>
+        <a href="crete.html" class="logo">Greecious</a>
         
         <!-- Navigation Links -->
         <ul class="nav__links">
@@ -221,7 +223,7 @@
             {
                 name: "Palace of Knossos",
                 type: "historical",
-                image: "knos.jpg",
+                image: "knos.jpeg",
                 shortDesc: "The legendary palace of King Minos and the mythical Minotaur, this Bronze Age archaeological site is Crete's most famous attraction.",
                 fullDesc: "The Palace of Knossos is the largest Bronze Age archaeological site on Crete and considered Europe's oldest city. Dating back to 2000-1350 BC, it was the ceremonial and political center of the Minoan civilization. The palace complex features impressive architecture, vibrant frescoes, and intricate pottery. Visitors can explore the royal quarters, central courtyard, throne room, and learn about the fascinating myths associated with the Minotaur and the labyrinth.",
                 location: "Heraklion",
@@ -239,7 +241,7 @@
             {
                 name: "Samaria Gorge",
                 type: "nature",
-                image: "sam.jpg",
+                image: "sam.jpeg",
                 shortDesc: "Europe's longest gorge offers an unforgettable hiking experience through dramatic landscapes.",
                 fullDesc: "The Samaria Gorge is a National Park of Greece and a World's Biosphere Reserve. The 16 km walk down the gorge starts at an altitude of 1,250m and takes you through forests of ancient cypresses and pines, then between vertical cliffs. The gorge is home to many species of flowers and birds, including the rare Cretan wild goat known as the kri-kri.",
                 location: "White Mountains",
@@ -290,7 +292,7 @@
                 const card = document.createElement('div');
                 card.className = 'place-card';
                 card.innerHTML = `
-                    <img src="../assets/crete/${place.image}" alt="${place.name}" class="place-image">
+                    <img src="${place.image}" alt="${place.name}" class="place-image">
                     <div class="place-info">
                         <span class="place-type">${place.type}</span>
                         <h3>${place.name}</h3>
@@ -342,7 +344,7 @@
                     
                     document.getElementById('modalContent').innerHTML = `
                         <h2>${place.name}</h2>
-                        <img src="../assets/crete/${place.image}" alt="${place.name}" style="width: 100%; border-radius: 10px; margin: 1rem 0;">
+                        
                         <p>${place.fullDesc}</p>
                         <h4>Location</h4>
                         <p>${place.location}</p>
