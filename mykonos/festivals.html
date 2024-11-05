@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cultural Festivals in Mykonos - Discover Greece</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'times new roman', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1920/600');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden; 
+        }
+        .header-img{
+        width: 100vw;
+        height: 80vh;
+        object-fit: fill; 
+        filter: brightness(50%); 
+        }
+        .hero-content {
+        position: absolute;
+        color: white; 
+        text-align: center;
+        top: 50%; 
+        transform: translateY(-50%);
+        }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Adjust heading size */
+        margin-bottom: 0.5rem; /* Spacing below heading */
+    }
+
+    .hero-content p {
+        font-size: 1.25rem; /* Adjust paragraph size */
+    }
+        .back-home {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(0,0,0,0.5);
+            border-radius: 5px;
+        }
+
+        nav {
+            background-color: #7091e6;
+            padding: 1.2rem;
+            position: sticky;
+            top:0;
+            z-index: 10;
+        }
+        .title{
+            align-self: flex-start;
+            font-size: x-large;
+        }
+        .middle{
+            display: flex;
+            gap:0.5rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3d52a0;
+        }
+        .festival-grid {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .festival-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .festival-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .festival-image {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .festival-content {
+            padding: 2rem;
+        }
+
+        .festival-date {
+            background-color: #1a5f7a;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        .festival-content h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .festival-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .festival-details {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .detail-item strong {
+            min-width: 100px;
+            color: #1a5f7a;
+        }
+
+        .upcoming-festivals {
+            background-color: #f5f5f5;
+            padding: 4rem 2rem;
+            margin-top: 3rem;
+        }
+
+        .upcoming-title {
+            text-align: center;
+            color: #1a5f7a;
+            margin-bottom: 3rem;
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .calendar-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .month-label {
+            color: #1a5f7a;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .event-list {
+            list-style: none;
+        }
+
+        .event-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid #1a5f7a;
+        }
+
+        footer {
+            background-color: #1a5f7a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .festival-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .calendar-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <div>
+                <li><a href="../index.html" class="title">Greecious</a></li>
+            </div>
+            <div class="middle">
+                <li><a href="history.html">History</a></li>
+                <li><a href="festivals.html">Cultural Festivals</a></li>
+                <li><a href="places.html">Places to Visit</a></li>
+                <li><a href="food.html">Food & Drink</a></li>
+                <li><a href="guide.html">Travel Guide</a></li>
+            </div>
+            <div>
+
+            </div>
+        </ul>
+    </nav>
+    
+    <header>
+        <img src="https://www.theacevip.com/wp-content/uploads/2019/02/best-places-to-party.jpg" alt="image" class="header-img">
+
+        <div class="hero-content">
+            <h1>Cultural Festivals in Mykonos</h1>
+            <p>Experience the vibrant celebrations of Greek culture and tradition on this iconic island</p>
+        </div>
+    </header>
+    <div class="festival-grid">
+        <div class="festival-card">
+            <div class="festival-image" style="background-image:url(https://mykonos.bluepeak.gr/wp-content/uploads/2024/05/Summer-2024-Mykonos-Clubs-Line-up-cover.jpg)"></div>
+            <div class="festival-content">
+                <span class="festival-date">June - September</span>
+                <h2>Mykonos Summer Festival</h2>
+                <p>A celebration of Mykonos' artistic spirit, with music, theater, and art events that capture the essence of island life.</p>
+                <div class="festival-details">
+                    <div class="detail-item">
+                        <strong>Location:</strong> Various venues
+                    </div>
+                    <div class="detail-item">
+                        <strong>Price:</strong> Varies by event
+                    </div>
+                    <div class="detail-item">
+                        <strong>Highlights:</strong> Art exhibitions, concerts
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="festival-card">
+            <div class="festival-image" style:"background-image:url(https://www.greece-is.com/wp-content/uploads/2021/06/IoannisStefanidisAOAFF2020.jpg)"></div>
+            <div class="festival-content">
+                <span class="festival-date">August</span>
+                <h2>Mykonos International Film Festival</h2>
+                <p>An eclectic mix of indie and international films shown in venues around the island, attracting filmmakers and cinephiles.</p>
+                <div class="festival-details">
+                    <div class="detail-item">
+                        <strong>Location:</strong> Various cinemas and open-air screenings
+                    </div>
+                    <div class="detail-item">
+                        <strong>Price:</strong> €10-15 per screening
+                    </div>
+                    <div class="detail-item">
+                        <strong>Highlights:</strong> Filmmaker panels, film premieres
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

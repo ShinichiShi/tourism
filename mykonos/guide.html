@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mykonos Travel Guide - Discover Greece</title>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'times new roman', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1920/600');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden; 
+        }
+        .header-img{
+        width: 100vw;
+        height: 80vh;
+        object-fit: fill; 
+        filter: brightness(50%); 
+        }
+        .hero-content {
+        position: absolute;
+        color: white; 
+        text-align: center;
+        top: 50%; 
+        transform: translateY(-50%);
+        }
+
+    .hero-content h1 {
+        font-size: 2.5rem; 
+        margin-bottom: 0.5rem; 
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+        .back-home {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(0,0,0,0.5);
+            border-radius: 5px;
+        }
+
+        nav {
+            background-color: #7091e6;
+            padding: 1.2rem;
+            position: sticky;
+            top:0;
+            z-index: 1000;
+        }
+        .title{
+            align-self: flex-start;
+            font-size: x-large;
+        }
+        .middle{
+            display: flex;
+            gap:0.5rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3d52a0;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .guide-section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            color: #1a5f7a;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid #1a5f7a;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .info-card h3 {
+            color: #1a5f7a;
+            margin-bottom: 1rem;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .info-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #1a5f7a;
+        }
+
+        .transport-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .transport-card {
+            flex: 1;
+            min-width: 250px;
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .price-table th,
+        .price-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .price-table th {
+            background: #1a5f7a;
+            color: white;
+        }
+
+        .price-table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .safety-tips {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .emergency-contacts {
+            background: #fff3cd;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .map-container {
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        #map {
+            height: 600px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        footer {
+            background-color: #1a5f7a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        @media (max-width: 768px) {
+            .guide-nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .transport-card {
+                flex: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <div>
+                <li><a href="../index.html" class="title">Greecious</a></li>
+            </div>
+            <div class="middle">
+                <li><a href="history.html">History</a></li>
+                <li><a href="festivals.html">Cultural Festivals</a></li>
+                <li><a href="places.html">Places to Visit</a></li>
+                <li><a href="food.html">Food & Drink</a></li>
+                <li><a href="guide.html">Travel Guide</a></li>
+            </div>
+            <div>
+
+            </div>
+        </ul>
+    </nav>
+    
+    <header>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9Jlr9nlZjh4cj1IIDzbss-ttVK1ypxhoqA5AjActBxCdfL0UiEBISnL4y6OlhjoqvKkw&usqp=CAU " alt="image" class="header-img">
+
+        <div class="hero-content">
+            <h1>Mykonos Travel Guide</h1>
+            <p>Everything you need to know for your Mykonos adventure</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="getting-there" class="guide-section">
+            <h2 class="section-title">Getting to Mykonos</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>By Air</h3>
+                    <p>Mykonos Island National Airport (JMK) is the main gateway, located 4km from Mykonos Town.</p>
+                    <ul class="info-list">
+                        <li>Frequent flights from Athens and other European cities</li>
+                        <li>Taxi fare: approximately €20 to Mykonos Town</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>By Sea</h3>
+                    <p>Mykonos is well-connected by ferry from Piraeus Port and other islands.</p>
+                    <ul class="info-list">
+                        <li>Ferries run daily from Athens (Piraeus and Rafina ports)</li>
+                        <li>Regular ferries from nearby islands like Paros, Naxos, and Santorini</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="accommodation" class="guide-section">
+    <h2 class="section-title">Where to Stay</h2>
+    <div class="info-grid">
+        <div class="info-card">
+            <h3>Recommended Hotels</h3>
+            <p>Mykonos offers a wide range of accommodation options, from luxury resorts to charming boutique hotels. Some of the most popular choices include <strong>Mykonos Grand Hotel</strong>, <strong>Santa Marina Mykonos</strong>, and <strong>Kivotos Mykonos</strong>, all offering stunning views, excellent service, and close proximity to the island's top attractions.</p>
+        </div>
+        <div class="info-card">
+            <h3>Budget-Friendly Stays</h3>
+            <p>If you're traveling on a budget, Mykonos has plenty of affordable options without compromising on quality. Consider staying at places like <strong>Hotel Carbonaki</strong> or <strong>Hotel Nazos</strong>, both offering comfortable accommodations in the heart of Mykonos Town.</p>
+        </div>
+        <div class="info-card">
+            <h3>Luxury Villas</h3>
+            <p>For a more exclusive experience, renting a private villa could be the ideal option. Villas such as <strong>Villa K8</strong> and <strong>Villa Elia</strong> provide luxury, privacy, and breathtaking views of the Aegean Sea, perfect for those seeking an indulgent stay.</p>
+        </div>
+        <div class="info-card">
+            <h3>Unique Stays</h3>
+            <p>If you're looking for something different, consider staying in one of Mykonos' unique accommodations, such as a traditional <strong>windmill house</strong> or a chic <strong>cave hotel</strong>. These distinctive stays offer a memorable experience of the island's heritage and charm.</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

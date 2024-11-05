@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History of Mykonos - Discover Greece</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'times new roman', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/mykonos/mykoshistory.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden; 
+        }
+        .header-img {
+            width: 100vw;
+            height: 80vh;
+            object-fit: fill; 
+            filter: brightness(50%); 
+        }
+        .hero-content {
+            position: absolute;
+            color: white; 
+            text-align: center;
+            top: 50%; 
+            transform: translateY(-50%);
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem; /* Adjust heading size */
+            margin-bottom: 0.5rem; /* Spacing below heading */
+        }
+
+        .hero-content p {
+            font-size: 1.25rem; /* Adjust paragraph size */
+        }
+        .back-home {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(0,0,0,0.5);
+            border-radius: 5px;
+        }
+
+        nav {
+            background-color: #7091e6;
+            padding: 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .title {
+            align-self: flex-start;
+            font-size: x-large;
+        }
+        .middle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3d52a0;
+        }
+
+        .timeline-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+            margin: 1rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: #1a5f7a;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: center;
+            padding-right: 50%;
+            position: relative;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: center;
+            padding-right: 0;
+            padding-left: 50%;
+        }
+
+        .timeline-content {
+            width: 90%;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background: #1a5f7a;
+            border-radius: 50%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -60px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -60px;
+        }
+
+        .timeline-date {
+            color: #1a5f7a;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content h3 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            max-width: 1200px;
+        }
+
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            padding: 1rem;
+            background: white;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #1a5f7a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding: 0 0 0 2rem;
+                justify-content: flex-start;
+            }
+
+            .timeline-content {
+                width: 100%;
+            }
+
+            .timeline-content::before {
+                left: -30px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <div>
+                <li><a href="../index.html" class="title">Greecious</a></li>
+            </div>
+            <div class="middle">
+                <li><a href="history.html">History</a></li>
+                <li><a href="festivals.html">Cultural Festivals</a></li>
+                <li><a href="places.html">Places to Visit</a></li>
+                <li><a href="food.html">Food & Drink</a></li>
+                <li><a href="guide.html">Travel Guide</a></li>
+            </div>
+            <div></div>
+        </ul>
+    </nav>
+
+    <header>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4TNkoCXTAZoT1kFO_B_s-FfvLHjnsrZm0QEGx7fXCsS8ZHMf39_38QzuNBUN0cX6u8yg&usqp=CAU " alt="Mykonos Image" class="header-img">
+        <div class="hero-content">
+            <h1>The History of Mykonos</h1>
+            <p>Explore the rich history and beauty of this iconic Greek island</p>
+        </div>
+    </header>
+
+    <div class="timeline-container">
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">3000 BCE</div>
+                    <h3>First Settlements</h3>
+                    <p>The first signs of human habitation on Mykonos date back to the Early Bronze Age, with evidence of settlements along the island's coast.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">5th Century BCE</div>
+                    <h3>Mykonos in the Classical Era</h3>
+                    <p>Mykonos played a supporting role in the naval battles of the Classical Greek period, and its wealth grew due to maritime trade.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">1204 CE</div>
+                    <h3>Venetian Rule</h3>
+                    <p>After the Fourth Crusade, Mykonos came under Venetian rule, which led to significant architectural and cultural influences still visible today.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <div class="timeline-date">1821 CE</div>
+                    <h3>Greek War of Independence</h3>
+                    <p>Mykonos played a key role in the Greek War of Independence, with its population actively participating in the fight against Ottoman rule.</p>
+                </div>
+            </div>
+          <div class="timeline-item">
+    <div class="timeline-content">
+        <div class="timeline-date">1950s-60s</div>
+        <h3>Tourism Boom</h3>
+        <p>In the mid-20th century, Mykonos experienced a tourism boom, becoming one of the most popular destinations in Greece. The island's picturesque landscapes, vibrant nightlife, and rich cultural heritage attracted visitors from around the world, transforming the local economy and shaping the island's modern identity.</p>
+    </div>
+</div>
+</body>
+</html>

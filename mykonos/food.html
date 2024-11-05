@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mykonos Food Guide - Greek Tourism</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/api/placeholder/1920/600');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+        }
+        .header-img{
+            width: 100vw;
+            height: 80vh;
+            object-fit: fill; 
+            filter: brightness(50%);
+        }
+        .hero-content {
+            position: absolute;
+            color: white; 
+            text-align: center;
+            top: 50%; 
+            transform: translateY(-50%);
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem; 
+            margin-bottom: 0.5rem; 
+        }
+
+        .hero-content p {
+            font-size: 1.25rem;
+        }
+        .back-home {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(0,0,0,0.5);
+            border-radius: 5px;
+        }
+
+        nav {
+            background-color: #7091e6;
+            padding: 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .title {
+            align-self: flex-start;
+            font-size: x-large;
+        }
+        .middle {
+            display: flex;
+            gap: 0.5rem;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3d52a0;
+        }
+
+        .food-section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1a5f7a;
+            margin-bottom: 3rem;
+        }
+
+        .food-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .food-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .food-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .food-info {
+            padding: 1.5rem;
+        }
+
+        .food-info h3 {
+            color: #1a5f7a;
+            margin-bottom: 0.5rem;
+        }
+
+        .food-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .drink-section {
+            background-color: #f5f5f5;
+            padding: 4rem 2rem;
+        }
+
+        footer {
+            background-color: #1a5f7a;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <div>
+                <li><a href="../index.html" class="title">Greecious</a></li>
+            </div>
+            <div class="middle">
+                <li><a href="history.html">History</a></li>
+                <li><a href="festivals.html">Cultural Festivals</a></li>
+                <li><a href="places.html">Places to Visit</a></li>
+                <li><a href="food.html">Food & Drink</a></li>
+                <li><a href="guide.html">Travel Guide</a></li>
+            </div>
+            <div>
+
+            </div>
+        </ul>
+    </nav>
+
+    <header>
+        <img src="https://greeceinsiders.travel/wp-content/uploads/2024/03/123097127-selection-of-traditional-greek-food.jpg" alt="Mykonos Food" class="header-img">
+
+        <div class="hero-content">
+            <h1>Mykonos Food Guide</h1>
+            <p>Explore the island's rich flavors, from seafood delights to sweet treats.</p>
+        </div>
+    </header>
+
+    <section class="food-section">
+        <h2 class="section-title">Popular Local Dishes</h2>
+        <div class="food-grid">
+            <div class="food-card">
+                <img src="https://www.recipetineats.com/tachyon/2017/03/Greek-Meatballs-4.jpg " alt="Keftedes" class="food-img">
+                <div class="food-info">
+                    <h3>Keftedes</h3>
+                    <p>Fried meatballs with herbs and spices, a favorite in many Greek tavernas.</p>
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="https://thesecretsuppersociety.com/wp-content/uploads/2022/06/Greek-Style-Grilled-Fish-1.jpg" alt="Grilled Fish" class="food-img">
+                <div class="food-info">
+                    <h3>Grilled Fish</h3>
+                    <p>Freshly caught fish grilled to perfection, often served with a drizzle of olive oil.</p>
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="https://www.dianekochilas.com/wp-content/uploads/2023/12/cheese-saganaki-recipe.jpg " alt="Saganaki" class="food-img">
+                <div class="food-info">
+                    <h3>Saganaki</h3>
+                    <p>A delicious fried cheese dish, typically served as an appetizer or snack.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="drink-section">
+        <h2 class="section-title">Traditional Drinks</h2>
+        <div class="food-grid">
+            <div class="food-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRas9QBTR7sMuVn24NQhDY_4nLlAXwHaXb18hei3ZfGFRwWuNebfkcsz1BNnLZIgG671Bg&usqp=CAU" alt="Ouzo" class="food-img">
+                <div class="food-info">
+                    <h3>Ouzo</h3>
+                    <p>A traditional Greek anise-flavored aperitif, perfect for sipping on a sunny Mykonos day.</p>
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="https://distefano.com.au/cdn/shop/articles/DS_Blog_Greek_Coffee_960x719_77db03de-0aa9-4efb-8745-3ea7be8205bd.png?v=1699310359 " alt="Greek Coffee" class="food-img">
+                <div class="food-info">
+                    <h3>Greek Coffee</h3>
+                    <p>A rich, strong coffee brewed to perfection and served with a side of conversation.</p>
+                </div>
+            </div>
+            <div class="food-card">
+                <img src="https://media.cnn.com/api/v1/images/stellar/prod/151012215744-raki-4.jpg?q=w_1110,c_fill " alt="Raki" class="food-img">
+                <div class="food-info">
+                    <h3>Raki</h3>
+                    <p>A local spirit, often served after meals, with a smooth yet potent flavor.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2024 Greek Tourism Guide | Mykonos Food Experience</p>
+    </footer>
+
+    <script>
+        // Add smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add animation to food cards on scroll
+        const foodCards = document.querySelectorAll('.food-card');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        foodCards.forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s, transform 0.5s';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

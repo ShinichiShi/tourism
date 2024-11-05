@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famous Places in Mykonos - Greek Tourism</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Times New Roman', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        header {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/mykonos/header.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden; 
+        }
+        .header-img {
+            width: 100vw;
+            height: 80vh;
+            object-fit: fill; 
+            filter: brightness(50%); 
+        }
+        .hero-content {
+            position: absolute;
+            color: white; 
+            display: flex; flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+            top: 50%; 
+            transform: translateY(-50%);
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem; 
+            margin-bottom: 0.5rem; 
+        }
+
+        .hero-content p {
+            font-size: 1.25rem; 
+        }
+
+        .back-home {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: rgba(0,0,0,0.5);
+            border-radius: 5px;
+        }
+
+        nav {
+            background-color: #7091e6;
+            padding: 1.2rem;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .title {
+            align-self: flex-start;
+            font-size: x-large;
+        }
+
+        .middle {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #3d52a0;
+        }
+
+        .explore-btn {
+            width: 10vw;
+            padding: 1rem;
+            background-color: #adbbda;
+            color: black;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: transform 0.3s;
+        }
+
+        .explore-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .attractions-section {
+            padding: 4rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+        }
+
+        .attraction-card {
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        @media (max-width: 768px) {
+            .attraction-card {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .attraction-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .attraction-info {
+            padding: 2rem;
+        }
+
+        .attraction-info h3 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .attraction-info p {
+            color: var(--text-color);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .quick-facts {
+            background-color: var(--light-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+        }
+
+        .quick-facts h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .quick-facts ul {
+            list-style: none;
+        }
+
+        .quick-facts li {
+            margin-bottom: 0.5rem;
+        }
+
+        footer {
+            background-color: #7091e6;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <div>
+                <li><a href="../index.html" class="title">Greecious</a></li>
+            </div>
+            <div class="middle">
+                <li><a href="history.html">History</a></li>
+                <li><a href="festivals.html">Cultural Festivals</a></li>
+                <li><a href="places.html">Places to Visit</a></li>
+                <li><a href="food.html">Food & Drink</a></li>
+                <li><a href="guide.html">Travel Guide</a></li>
+            </div>
+        </ul>
+    </nav>
+    
+    <header>
+        <img src="https://images.squarespace-cdn.com/content/v1/56393e5fe4b09fbfe62a62d4/1651501764809-83SU42PAMZCCZWDCRUJZ/GettyImages-1197065499.jpeg" alt="Mykonos" class="header-img">
+
+        <div class="hero-content">
+            <h1>Discover the Vibrant Island of Mykonos</h1>
+            <p>Explore world-renowned beaches, charming streets, and unforgettable nightlife</p>
+            <div>
+                <a href="#attractions" class="explore-btn">Start Exploring</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="attractions" class="attractions-section">
+        <h2 class="section-title">Must-Visit Attractions in Mykonos</h2>
+
+        <!-- Windmills of Mykonos -->
+        <div class="attraction-card">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/e2/a0/fb/mykonos.jpg?w=1200&h=-1&s=1" alt="Windmills of Mykonos" class="attraction-img">
+            <div class="attraction-info">
+                <h3>The Windmills of Mykonos</h3>
+                <p>The iconic windmills of Mykonos are among the most recognized symbols of the island. Perched on a hill above Mykonos Town, they offer panoramic views of the island and the Aegean Sea.</p>
+                <div class="quick-facts">
+                    <h4>Quick Facts</h4>
+                    <ul>
+                        <li>🕒 Opening Hours: Open year-round</li>
+                        <li>💶 Entry Fee: Free</li>
+                        <li>⏱ Suggested Visit: 30-60 minutes</li>
+                        <li>📍 Location: Mykonos Town</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Little Venice -->
+        <div class="attraction-card">
+ <img src="https://www.greeka.com/seedo/photos/34/mykonos-little-venice-top-3-1280.jpg" alt="Little Venice" class="attraction-img">
+
+            <div class="attraction-info">
+                <h3>Little Venice</h3>
+                <p>Little Venice is a picturesque neighborhood in Mykonos Town, famous for its colorful 18th-century houses built right on the water. It’s a perfect spot for evening drinks while watching the sunset.</p>
+                <div class="quick-facts">
+                    <h4>Quick Facts</h4>
+                    <ul>
+                        <li>🕒 Opening Hours: Open year-round</li>
+                        <li>💶 Entry Fee: Free</li>
+                        <li>⏱ Suggested Visit: 1-2 hours</li>
+                        <li>📍 Location: Mykonos Town</li>
+                    </ul>
+                </div>
+            </div>
+                    
+
+        <!-- Paradise Beach -->
+        <div class="attraction-card">
+            <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/8a/ae/46/aerial-view-of-paradise.jpg?w=1200&h=-1&s=1" alt="Paradise Beach" class="attraction-img">
+            <div class="attraction-info">
+                <h3>Paradise Beach</h3>
+                <p>Known for its crystal-clear waters and lively atmosphere, Paradise Beach is one of Mykonos' most famous beaches, ideal for both relaxation and partying.</p>
+                <div class="quick-facts">
+                    <h4>Quick Facts</h4>
+                    <ul>
+                        <li>🕒 Opening Hours: Open year-round</li>
+                        <li>💶 Entry Fee: Free</li>
+                        <li>⏱ Suggested Visit: 1-2 hours</li>
+<li>📍 Location Mykonos Town</li>
+</ul>
+</div>
+</div>
+</body>
+</html>
