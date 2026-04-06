@@ -25,7 +25,7 @@ pipeline {
     stage('Build Docker image') {
       when {
         expression {
-          sh(script: 'command -v docker >/dev/null 2>&1', returnStatus: true) == 0
+          sh(script: 'command -v docker >/dev/null 2>&1 && docker info >/dev/null 2>&1', returnStatus: true) == 0
         }
       }
       steps {
